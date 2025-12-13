@@ -5,10 +5,15 @@
   font-style: normal;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
 }
 
 .header {
@@ -17,23 +22,84 @@
   margin-bottom: 40px;
 }
 
+.h1-handwriting {
+  font-family: 'korina-handwriting';
+  font-size: 2em;
+}
+
+.h2-handwriting {
+  font-family: 'korina-handwriting';
+  font-size: 3em;
+}
+
+.p-handwriting {
+  font-family: 'korina-handwriting';
+  font-size: 1.2em;
+}
+
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 1000px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .location-card {
-  border: 1px solid #ddd;
+  display: block;
+  position: relative;
   border-radius: 8px;
-  padding: 20px;
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  height: 300px;
 }
 
 .location-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.location-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h2 {
+  margin: 0 0 10px 0;
+}
+
+.card-overlay p {
+  margin: 0;
 }
 
 .gallery {
@@ -69,4 +135,9 @@
 
 .back-button:hover {
   background-color: #e0e0e0;
+}
+
+.leaflet-tooltip {
+  font-family: 'korina-handwriting' !important;
+  font-size: 1.2em;
 }
