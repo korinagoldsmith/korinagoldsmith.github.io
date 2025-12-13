@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import shanghai1 from './assets/shanghai_city.jpg'
-import shanghai2 from './assets/shanghai_night.jpg'
-import beijing1 from './assets/great_wall.jpg'
-import beijing2 from './assets/forbidden_city.jpg'
-import la1 from './assets/ventura_surfers.jpg'
-import la2 from './assets/camarillo_beach.jpg'
+import mapIcon from './assets/map_icon.png'
+import shanghai1 from './assets/shanghai/shanghai_city.jpg'
+import shanghai2 from './assets/shanghai/shanghai_night.jpg'
+import beijing1 from './assets/beijing/great_wall.jpg'
+import beijing2 from './assets/beijing/forbidden_city.jpg'
+import la1 from './assets/la/ventura_surfers.jpg'
+import la2 from './assets/la/camarillo_beach.jpg'
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 import LocationPage from './LocationPage.jsx'
@@ -42,8 +43,12 @@ function App() {
       <Route path="/" element={
       <div className="container">
         <div className="header">
-          <h1>Korina's Photography Portfolio</h1>
-          <Link to="/map" className="map-link"> View Travel Map</Link>
+          <nav className="nav-bar">
+            <h1 className="nav-title">Korina's Photography Portfolio</h1>
+            <Link to="/map" className="map-nav-link"> 
+              <img src={mapIcon}/>
+            </Link>
+          </nav>
         </div>
 
         <div className="cards-container">

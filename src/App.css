@@ -34,7 +34,7 @@ body {
 
 .p-handwriting {
   font-family: 'korina-handwriting';
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 
 .cards-container {
@@ -140,4 +140,33 @@ body {
 .leaflet-tooltip {
   font-family: 'korina-handwriting' !important;
   font-size: 1.2em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.nav-title {
+  font-family: 'korina-handwriting';
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.map-nav-link {
+  transition: transform 0.2s;
+}
+
+.map-nav-link:hover {
+  transform: scale(1.1);
+}
+
+.map-nav-link img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
