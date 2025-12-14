@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+import houseIcon from './assets/house_icon.png'
+import mapIcon from './assets/map_icon.png'
+import clockIcon from './assets/clock_icon.png'
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -21,7 +25,21 @@ function MapPage({ locations }) {
 
     return (
         <div className="container">
-        <h1 className='h1-handwriting'>Travel Map</h1>
+            <div className="header">
+            <nav className="nav-bar">
+                <h1 className="nav-title">Travel Map</h1>
+                <Link to="/" className="nav-link"> 
+                    <img src={houseIcon} alt="Home" />
+                </Link>
+                <Link to="/map" className="nav-link"> 
+                    <img src={mapIcon} alt="Map" />
+                </Link>
+                <Link to="/timeline" className="nav-link">
+                    <img src={clockIcon} alt="Timeline" />
+                </Link>
+            </nav>
+            </div>
+
         <div style={{ position: 'relative'}}>
             {hoveredLocation && (
                 <div className="location-preview">
