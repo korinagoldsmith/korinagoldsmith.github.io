@@ -12,6 +12,7 @@ import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 import LocationPage from './LocationPage.jsx'
 import MapPage from './MapPage.jsx'
+import TimelinePage from './TimelinePage.jsx'
 
 function App() {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -32,14 +33,20 @@ function App() {
       country: 'China',
       coordinates: [39.9042, 116.4074],
       heroImage: beijing1,
-      photos: [beijing1, beijing2]
+      photos: [
+        {src: beijing1, date: '2025-05-07'},
+        {src: beijing2, date: '2025-05-10'}
+      ]
      },
      {
       name: 'Los Angeles', 
       country: 'California, USA',
       coordinates: [34.0522, -118.2437],
       heroImage: la2,
-      photos: [la1, la2]
+      photos: [
+        {src: la1, date: '2025-10-03'},
+        {src: la2, date: '2025-10-04'}
+      ]
      }
   ]
 
@@ -56,7 +63,7 @@ function App() {
             <Link to="/map" className="nav-link"> 
               <img src={mapIcon}/>
             </Link>
-            <Link to="/location/Shanghai" className="nav-link">
+            <Link to="/timeline" className="nav-link">
               <img src={clockIcon}/>
             </Link>
           </nav>
@@ -80,6 +87,7 @@ function App() {
       } />
     <Route path="/location/:name" element={<LocationPage locations={locations} />} />
     <Route path="/map" element={<MapPage locations={locations} />} />
+    <Route path="/timeline" element={<TimelinePage locations={locations} />} />
     </Routes>
   )
 }

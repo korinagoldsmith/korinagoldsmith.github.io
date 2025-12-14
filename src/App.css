@@ -170,3 +170,73 @@ body {
   height: 60px;
   object-fit: contain;
 }
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  padding-left: 50px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #ddd;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+/* Circle on the timeline */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #646cff;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #ddd;
+}
+
+.timeline-date {
+  margin-bottom: 20px;
+  font-family: "korina-handwriting" !important;
+}
+
+.timeline-date h2 {
+  margin: 0 0 5px 0;
+  font-family: "korina-handwriting" !important;
+  font-size: 2em;
+  color: #333;
+}
+
+.timeline-location {
+  margin: 0;
+  color: #666;
+  font-family: "korina-handwriting" !important;
+}
+
+.timeline-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.timeline-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
