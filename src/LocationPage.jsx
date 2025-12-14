@@ -1,7 +1,9 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import backArrowIcon from './assets/back_arrow.png'
 
 function LocationPage({ locations }) {
     const { name } = useParams();
+    const navigate = useNavigate();
     const location = locations.find(loc => loc.name === name);
 
     if (!location) {
@@ -10,7 +12,9 @@ function LocationPage({ locations }) {
 
   return (
     <div className="container">
-        <Link to="/" className="back-button"> Back to Home</Link>
+        <button onClick={() => navigate(-1)} className="back-button">
+        <img src={backArrowIcon} alt="Go Back" />
+        </button>
       <h1 className='h1-handwriting'>{location.name}, {location.country}</h1>
 
         <div className="photos-grid">
