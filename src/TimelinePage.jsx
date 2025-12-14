@@ -14,12 +14,14 @@ function TimelinePage({ locations }) {
 
     const sortedPhotos = allPhotos.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-    const photosByDate = sortedPhotos.reduce((groups, photo) => {
-        const date = photo.date;
-        if (!groups[date]) {
-            groups[date] = [];
+    const photosByMonth = sortedPhotos.reduce((groups, photo) => {
+        const date = new Date(photo.date);
+        const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+        
+        if (!groups[monthKey]) {
+            groups[monthKey] = [];
         }
-        groups[date].push(photo);
+        groups[monthKey].push(photo);
         return groups;
     }, {});
 
@@ -41,17 +43,15 @@ function TimelinePage({ locations }) {
             </div>
 
             <div className="timeline">
-                {Object.entries(photosByDate).map(([date, photos]) => (
+                {Object.entries(photosByMonth).map(([date, photos]) => (
                     <div key={date} className="timeline-entry">
                         <h2 className="timeline-date">{new Date(date).toLocaleDateString(
-                            'en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</h2>
-                        <p className="timeline-location">{photos[0].locationName}, {photos[0].locationCountry}</p>
+                            'en-US', { month: 'long', year: 'numeric' })}</h2>
                         <div className="timeline-photos">
                             {photos.map((photo, index) => (
                                 <img
                                     key={index}
                                     src={photo.src}
-                                    alt={`${photo.locationName} photo`}
                                     className="timeline-photo"
                                 />
                             ))}

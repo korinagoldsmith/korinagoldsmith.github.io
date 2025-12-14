@@ -157,7 +157,7 @@ body {
 .nav-title {
   font-family: 'korina-handwriting';
   margin: 0;
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 .nav-link {
@@ -213,13 +213,14 @@ body {
 
 .timeline-date {
   margin-bottom: 1px;
+  font-size: 2.3em;
   font-family: "korina-handwriting" !important;
 }
 
 .timeline-date h2 {
   margin: 0 0 5px 0;
   font-family: "korina-handwriting" !important;
-  font-size: 2em;
+  font-size: 3em;
   color: #333;
 }
 
