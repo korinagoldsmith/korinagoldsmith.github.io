@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import houseIcon from './assets/house_icon.png'
 import mapIcon from './assets/map_icon.png'
+import clockIcon from './assets/clock_icon.png'
 import shanghai1 from './assets/shanghai/shanghai_city.jpg'
 import shanghai2 from './assets/shanghai/shanghai_night.jpg'
 import beijing1 from './assets/beijing/great_wall.jpg'
@@ -20,7 +22,10 @@ function App() {
       country: 'China',
       coordinates: [31.2304, 121.4737], 
       heroImage: shanghai1,
-      photos: [shanghai1, shanghai2]
+      photos: [
+        {src: shanghai1, date: '2025-05-13'},
+        {src: shanghai2, date: '2025-05-13'}
+      ]
     },
     {
       name: 'Beijing', 
@@ -45,8 +50,14 @@ function App() {
         <div className="header">
           <nav className="nav-bar">
             <h1 className="nav-title">Korina's Photography Portfolio</h1>
-            <Link to="/map" className="map-nav-link"> 
+            <Link to="/" className="nav-link"> 
+              <img src={houseIcon}/>
+            </Link>
+            <Link to="/map" className="nav-link"> 
               <img src={mapIcon}/>
+            </Link>
+            <Link to="/location/Shanghai" className="nav-link">
+              <img src={clockIcon}/>
             </Link>
           </nav>
         </div>

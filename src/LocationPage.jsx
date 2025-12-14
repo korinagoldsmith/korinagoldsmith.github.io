@@ -15,7 +15,7 @@ function LocationPage({ locations }) {
 
         <div className="photos-grid">
             {location.photos.map(photo => (
-                <img key={photo} src={photo} alt={`${location.name} photo`} />
+                <img key={photo} src={photo.src} alt={`${location.name} photo`} />
             ))}
         </div>
     </div>

@@ -157,15 +157,15 @@ body {
   font-size: 2.5em;
 }
 
-.map-nav-link {
+.nav-link {
   transition: transform 0.2s;
 }
 
-.map-nav-link:hover {
+.nav-link:hover {
   transform: scale(1.1);
 }
 
-.map-nav-link img {
+.nav-link img {
   width: 60px;
   height: 60px;
   object-fit: contain;
