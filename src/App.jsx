@@ -24,8 +24,8 @@ function App() {
       coordinates: [31.2304, 121.4737], 
       heroImage: shanghai1,
       photos: [
-        {src: shanghai1, date: '2025-05-13'},
-        {src: shanghai2, date: '2025-05-13'}
+        {src: shanghai1, date: '2025-05'},
+        {src: shanghai2, date: '2025-05'}
       ]
     },
     {
@@ -34,8 +34,8 @@ function App() {
       coordinates: [39.9042, 116.4074],
       heroImage: beijing1,
       photos: [
-        {src: beijing1, date: '2025-05-07'},
-        {src: beijing2, date: '2025-05-10'}
+        {src: beijing1, date: '2025-05'},
+        {src: beijing2, date: '2025-05'}
       ]
      },
      {
@@ -44,8 +44,8 @@ function App() {
       coordinates: [34.0522, -118.2437],
       heroImage: la2,
       photos: [
-        {src: la1, date: '2025-10-03'},
-        {src: la2, date: '2025-10-04'}
+        {src: la1, date: '2025-10'},
+        {src: la2, date: '2025-10'}
       ]
      }
   ]
