@@ -8,6 +8,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #ffffff;
 }
 
 .container {
@@ -162,6 +163,7 @@ body {
   font-family: 'korina-handwriting';
   margin: 0;
   font-size: 3em;
+  color: black;
 }
 
 .nav-link {
